@@ -17,3 +17,14 @@
      ```
 For `venv` based virtual environment, this should also work if you somehow
 install `rdkit` (it is possible).
+
+## Exemplary usage
+```python
+>>> from mfscore.ocsvm import score_smiles, score_all
+>>> aspirin = "O=C(C)Oc1ccccc1C(=O)O"
+>>> cholesterol = "C[C@H](CCCC(C)C)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC=C4[C@@]3(CC[C@@H](C4)O)C)C"
+>>> score_smiles(aspirin)
+10.232122084989555
+>>> score_all([aspirin, cholesterol])
+array([  10.23212208, -412.95839636])
+```

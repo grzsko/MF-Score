@@ -36,7 +36,7 @@ def score_smiles(smiles):
         Score for input SMILES
     """
     fps = ecfp(smiles, FPS_SIZE)
-    return clf.score_samples([fps])[0]
+    return clf.decision_function([fps])[0]
 
 
 def score_all(smileses):
@@ -55,4 +55,4 @@ def score_all(smileses):
     X = []
     for smiles in smileses:
         X.append(ecfp(smiles, FPS_SIZE))
-    return clf.score_samples(np.array(X))
+    return clf.decision_function(np.array(X))
