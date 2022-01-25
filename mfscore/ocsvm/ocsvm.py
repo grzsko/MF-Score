@@ -1,11 +1,14 @@
 import pickle
+from pathlib import Path
+
 import numpy as np
 from rdkit import Chem
 from rdkit.Chem import AllChem
 
 FPS_SIZE = 128
 
-with open("mfscore/ocsvm/fps_128_rbf_nu01_gamma_auto", "rb") as infile:
+with open(Path(__file__).parent / "fps_128_rbf_nu01_gamma_auto",
+          "rb") as infile:
     clf = pickle.load(infile)
 
 
@@ -33,7 +36,7 @@ def score_smiles(smiles):
         Score for input SMILES
     """
     fps = ecfp(smiles, FPS_SIZE)
-    return clf.score_samples([fps])
+    return clf.score_samples([fps])[0]
 
 
 def score_all(smileses):
