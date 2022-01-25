@@ -15,7 +15,7 @@
      cd $project_root
      python3 setup.py develop
      ```
-For `venv` based virtual environment, this should also work if you somehow
+For `venv` based virtual environment, this should work also if you somehow
 install `rdkit` (it is possible).
 
 ## Exemplary usage
