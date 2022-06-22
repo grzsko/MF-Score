@@ -7,5 +7,5 @@ setup(
     description='Some ML scores for scoring some molecules.',
     author='Grzegorz Skoraczynski',
     license='MIT',
-    install_requires=["scikit-learn", "numpy"]
+    install_requires=["scikit-learn>=0.24.2", "numpy"]
 )
